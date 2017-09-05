@@ -10,7 +10,7 @@ class OKCoin extends OKCoinBase {
 
 	//获取OKCoin行情（盘口数据）
 	public function tickerApi($params = null) {
-		return $this -> get("/api/v1/ticker.do", $params);
+		return json_decode($this -> get("/api/v1/ticker.do", $params));
 	}
 	
 	//获取OKCoin市场深度
@@ -35,7 +35,7 @@ class OKCoin extends OKCoinBase {
 
 	//下单交易
 	public function tradeApi($params = null) {
-		return $this -> post("/api/v1/trade.do", $params);
+		return json_decode($this -> post("/api/v1/trade.do", $params));
 	}
 
 	//批量下单
