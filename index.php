@@ -1,6 +1,6 @@
 <?php
 require_once ('init.php');
-$params = array('api_key' => API_KEY, 'symbol' => 'eth_usd', 'order_id' => 69858314);
+$params = array('api_key' => API_KEY, 'symbol' => 'eth_usd', 'order_id' => 69857468);
 $return = $ico -> orderInfoApi(getParam($params));
 var_dump($return);
 exit;
