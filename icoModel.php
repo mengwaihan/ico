@@ -16,7 +16,7 @@ class iocModel(){
     {
     	$sql = "SELECT price
     			FROM ico_record
-    			WHERE type = buy_market
+    			WHERE type = 'buy_market'
     			ORDER BY record_id DESC";
 		return $db->getOne($sql);
     }
