@@ -14,6 +14,7 @@ function getParam($params){
 		$sign .= $k . '=' . $v . '&';
 	}
 	$sign .= 'secret_key=' . SECRET_KEY;
+	var_dump($sign);
 	$params['sign'] = strtoupper(MD5($sign));
 	return $params;
 }
