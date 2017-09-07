@@ -1,5 +1,5 @@
 <?php
-echo 20000;
+echo 2000;
 require_once ('init.php');
 
 try {
