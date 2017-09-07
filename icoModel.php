@@ -17,11 +17,12 @@ class iocModel{
     	$sql = "SELECT price
     			FROM ico_record
     			WHERE type = 'buy_market'
+                AND quanlity < 0
     			ORDER BY record_id DESC";
 		return $db->getOne($sql);
     }
 
-    //buy
+    //sell
     public function sell ($data)
     {
     	$sql = "UPDATE ico_transac SET
@@ -32,7 +33,7 @@ class iocModel{
     	$this->insertRecord($data);
     }
 
-    //sell
+    //buy
     public function buy ($data)
     {
     	$sql = "INSERT INTO ico_transac SET

@@ -13,34 +13,33 @@ $A = $result->ticker;
 //循环记录表中未交易完数据，比较现在价格与$A['sell']，差价大于10%（待定），则卖出
 
 foreach ($icoModel->getIncomplete() as $order) {
-	if (($order['price'] * (1 + 10 / 100)) < $A['sell']) {
+	if (($order['price'] * (1 + 10 / 100)) < $A->sell) {
 		//sell
 		$params = array('api_key' => API_KEY, 'symbol' => 'eth_cny', 'type' => 'sell_market', 'price' => $order['quanlity']);
 		$result = $ico -> tickerApi(getParam($params));
 		if ('true' == $result->result) {
-			// $ico->
-		} else {
-
+			$params = array('api_key' => API_KEY, 'symbol' => 'eth_cny', 'order_id' => $result->order_id);
+			$return = $ico -> orderInfoApi(getParam($params));
+			$data = array('quanlity' => $return->orders->);
+			$data[] = ;
+			$icoModel->sell();
 		}
-		//
 	}
 }
 
 //获取上次买入价格B
 $lastBuy = $icoModel->getLastBuy();
-if (($lastBuy * (1 - 10 / 100)) >= $A['buy']){
+//比较$A['buy']与B，差价大于10%（待定），则买入
+if (($lastBuy * (1 - 10 / 100)) >= $A->buy){
 	//buy
 	$params = array('api_key' => API_KEY, 'symbol' => 'eth_cny', 'type' => 'buy_market', 'amount' => 0.1);
 	$result = $ico -> tickerApi(getParam($params));
 	if ('true' == $result->result) {
 
-	} else {
-
 	}
 
 }
 
-//比较$A['buy']与B，差价大于10%（待定），则买入
 
 //post params
 function getParam($params){

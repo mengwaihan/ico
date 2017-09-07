@@ -1,8 +1,28 @@
 <?php
 echo 20;
 require_once ('init.php');
+$params = array('api_key' => API_KEY, 'symbol' => 'eth_cny', 'order_id' => -1);
+$return = $ico -> orderInfoApi(getParam($params));
+var_dump($return);
+exit;
+
+
+//post params
+function getParam($params){
+	$sign = '';
+	foreach ($params as $k => $v) {
+		$sign .= $k . '=' . $v . '&';
+	}
+	$sign .= 'secret_key=' . SECRET_KEY;
+	$params['sign'] = md5($sign);
+	return $params;
+}
+
+
 
 try {
+
+
 
 	//OKCoin DEMO 入口
 	$ioc = new OKCoin(new OKCoin_ApiKeyAuthentication(API_KEY, SECRET_KEY));
