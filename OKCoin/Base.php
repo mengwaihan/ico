@@ -14,9 +14,9 @@ require_once (dirname(__FILE__) . '/ApiKeyAuthentication.php');
 class OKCoinBase {
 	const API_BASE = '/api/v1/';
 	
-	const WEB_BASE = 'https://www.okcoin.com/';//OKCoin国际站
+	// const WEB_BASE = 'https://www.okcoin.com/';//OKCoin国际站
 
-	//const WEB_BASE = 'https://www.okcoin.cn/';//OKCoin中国站
+	const WEB_BASE = 'https://www.okcoin.cn/';//OKCoin中国站
 	
 	private $_rpc;
 	private $_authentication;
