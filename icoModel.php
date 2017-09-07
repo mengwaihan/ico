@@ -1,7 +1,7 @@
 <?php 
 
 
-class iocModel(){
+class iocModel{
 
     public function getIncomplete ()
     {

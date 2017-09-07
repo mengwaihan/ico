@@ -1,12 +1,8 @@
 <?php
 
 require_once ('init.php');
-require_once ('iocModel.php');
 
 try {
-	echo API_KEY . "/n";
-
-	echo SECRET_KEY;exit;
 
 	//OKCoin DEMO 入口
 	$ioc = new OKCoin(new OKCoin_ApiKeyAuthentication(API_KEY, SECRET_KEY));
@@ -20,7 +16,7 @@ try {
 	//获取OKCoin市场深度
 	$params = array('symbol' => 'btc_usd', 'size' => 5);
 	$result = $ioc -> depthApi($params);
-	print_r($result);
+	print_r($result->asks);
 
 	//获取OKCoin历史交易信息
 	//$params = array('symbol' => 'btc_usd');

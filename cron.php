@@ -8,7 +8,7 @@ $params = array('symbol' => 'eth_cny');
 $result = $ico -> tickerApi($params);
 // print_r($result);
 
-$A = $result['ticker'];
+$A = $result->ticker;
 
 //循环记录表中未交易完数据，比较现在价格与$A['sell']，差价大于10%（待定），则卖出
 
@@ -17,7 +17,7 @@ foreach ($icoModel->getIncomplete() as $order) {
 		//sell
 		$params = array('api_key' => API_KEY, 'symbol' => 'eth_cny', 'type' => 'sell_market', 'price' => $order['quanlity']);
 		$result = $ico -> tickerApi(getParam($params));
-		if ('true' == $result['result']) {
+		if ('true' == $result->result) {
 			// $ico->
 		} else {
 
@@ -32,7 +32,7 @@ if (($lastBuy * (1 - 10 / 100)) >= $A['buy']){
 	//buy
 	$params = array('api_key' => API_KEY, 'symbol' => 'eth_cny', 'type' => 'buy_market', 'amount' => 0.1);
 	$result = $ico -> tickerApi(getParam($params));
-	if ('true' == $result['result']) {
+	if ('true' == $result->result) {
 
 	} else {
 
