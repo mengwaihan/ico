@@ -16,7 +16,7 @@ foreach ($icoModel->getIncomplete() as $order) {
 	if (($order['price'] * (1 + 10 / 100)) < $A->sell) {
 		//sell
 		$params = array('api_key' => API_KEY, 'symbol' => 'eth_usd', 'type' => 'sell_market', 'price' => $order['quanlity']);
-		$result = $ico -> tickerApi(getParam($params));
+		$result = $ico -> tradeApi(getParam($params));
 		if ('true' == $result->result) {
 			$params = array('api_key' => API_KEY, 'symbol' => 'eth_usd', 'order_id' => $result->order_id);
 			$return = $ico -> orderInfoApi(getParam($params));
@@ -33,7 +33,7 @@ $lastBuy = $icoModel->getLastBuy();
 if (($lastBuy * (1 - 10 / 100)) >= $A->buy){
 	//buy
 	$params = array('api_key' => API_KEY, 'symbol' => 'eth_usd', 'type' => 'buy_market', 'amount' => 0.1);
-	$result = $ico -> tickerApi(getParam($params));
+	$result = $ico -> tradeApi(getParam($params));
 	if ('true' == $result->result) {
 
 	}

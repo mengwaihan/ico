@@ -1,8 +1,11 @@
 <?php
 require_once ('init.php');
-$params = array('api_key' => API_KEY, 'symbol' => 'eth_usd', 'order_id' => 69857468);
-$return = $ico -> orderInfoApi(getParam($params));
-var_dump($return);
+
+$params = array('api_key' => API_KEY, 'symbol' => 'eth_usd', 'type' => 'buy_market', 'amount' => 0.1);
+$result = $ico -> tradeApi(getParam($params));
+// $params = array('api_key' => API_KEY, 'symbol' => 'eth_usd', 'order_id' => 69857468);
+// $return = $ico -> orderInfoApi(getParam($params));
+var_dump($result);
 exit;
 
 
@@ -13,7 +16,6 @@ function getParam($params){
 		$sign .= $k . '=' . $v . '&';
 	}
 	$sign .= 'secret_key=' . SECRET_KEY;
-	var_dump($sign);
 	$params['sign'] = strtoupper(MD5($sign));
 	return $params;
 }
