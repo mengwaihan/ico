@@ -17,8 +17,8 @@ if (file_exists(dirname(__FILE__) . '/private.php')) {
 !defined('DBPASS') &&  define('DBPASS', '');
 
 require_once ('sql.php');
-require_once ('icoModel.php');
 $GLOBALS['db'] = new Db();
+require_once ('icoModel.php');
 $GLOBALS['ico'] = new OKCoin(new OKCoin_ApiKeyAuthentication(API_KEY, SECRET_KEY));
 $GLOBALS['icoModel'] = new iocModel();
 

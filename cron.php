@@ -6,10 +6,10 @@ require_once ('init.php');
 
 $params = array('symbol' => 'eth_usd');
 $result = $ico -> tickerApi($params);
-// print_r($result);
+print_r($result);
 
 $A = $result->ticker;
-
+exit;
 //循环记录表中未交易完数据，比较现在价格与$A['sell']，差价大于10%（待定），则卖出
 
 foreach ($icoModel->getIncomplete() as $order) {
