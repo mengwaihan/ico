@@ -95,6 +95,7 @@ class OKCoin_Rpc {
 		} else if (isset($json -> errors)) {
 			throw new OKCoin_Exception(implode($json -> errors, ', '), $response['statusCode'], $response['body']);
 		}
+		curl_close($ch);
 
 		return $json;
 	}
