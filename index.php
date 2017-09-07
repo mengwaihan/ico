@@ -4,6 +4,9 @@ require_once ('init.php');
 require_once ('iocModel.php');
 
 try {
+	echo API_KEY . "/n";
+
+	echo SECRET_KEY;
 
 	//OKCoin DEMO 入口
 	$ioc = new OKCoin(new OKCoin_ApiKeyAuthentication(API_KEY, SECRET_KEY));
