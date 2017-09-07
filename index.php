@@ -1,7 +1,7 @@
 <?php
-echo 20;
 require_once ('init.php');
 $params = array('api_key' => API_KEY, 'symbol' => 'eth_cny', 'order_id' => -1);
+var_dump($params);
 $return = $ico -> orderInfoApi(getParam($params));
 var_dump($return);
 exit;
