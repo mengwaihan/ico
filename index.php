@@ -1,8 +1,8 @@
 <?php
 require_once ('init.php');
 
-$params = array('api_key' => API_KEY, 'symbol' => 'eth_usd', 'type' => 'buy_market', 'amount' => 0.1);
-$result = $ico -> tradeApi(getParam($params));
+$params = array('api_key' => API_KEY, 'symbol' => 'eth_usd', 'type' => 'buy_market', 'price' => 0.01);
+$result = $ico -> orderHistoryApi(getParam($params));
 // $params = array('api_key' => API_KEY, 'symbol' => 'eth_usd', 'order_id' => 69857468);
 // $return = $ico -> orderInfoApi(getParam($params));
 var_dump($result);
