@@ -26,7 +26,7 @@ class icoModel{
     			FROM ico_transac
     			WHERE type = 'eth_cny'
                 AND quanlity > 0
-    			ORDER BY record_id DESC";
+    			ORDER BY transac_id DESC";
         $price = $this->db->getOne($sql);
         if (!$price) {
             $sql = "SELECT price
