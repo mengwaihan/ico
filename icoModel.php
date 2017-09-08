@@ -2,6 +2,11 @@
 
 
 class icoModel{
+    function __construct($authentication) {
+        var_dump($ico);
+        var_dump($db);
+
+    }
 
     public function getIncomplete ()
     {
