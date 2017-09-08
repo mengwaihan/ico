@@ -1,24 +1,24 @@
 <?php
 require_once ('init.php');
 
-$params = array('api_key' => API_KEY, 'symbol' => 'eth_usd', 'type' => 'buy_market', 'price' => 0.01);
-$result = $ico -> orderHistoryApi(getParam($params));
-// $params = array('api_key' => API_KEY, 'symbol' => 'eth_usd', 'order_id' => 69857468);
-// $return = $ico -> orderInfoApi(getParam($params));
-var_dump($result);
-exit;
+// $params = array('api_key' => API_KEY, 'symbol' => 'eth_usd', 'type' => 'buy_market', 'price' => 0.01);
+// $result = $ico -> orderHistoryApi(getParam($params));
+// // $params = array('api_key' => API_KEY, 'symbol' => 'eth_usd', 'order_id' => 69857468);
+// // $return = $ico -> orderInfoApi(getParam($params));
+// var_dump($result);
+// exit;
 
 
-//post params
-function getParam($params){
-	$sign = '';
-	foreach ($params as $k => $v) {
-		$sign .= $k . '=' . $v . '&';
-	}
-	$sign .= 'secret_key=' . SECRET_KEY;
-	$params['sign'] = strtoupper(MD5($sign));
-	return $params;
-}
+// //post params
+// function getParam($params){
+// 	$sign = '';
+// 	foreach ($params as $k => $v) {
+// 		$sign .= $k . '=' . $v . '&';
+// 	}
+// 	$sign .= 'secret_key=' . SECRET_KEY;
+// 	$params['sign'] = strtoupper(MD5($sign));
+// 	return $params;
+// }
 
 
 
