@@ -4,7 +4,7 @@ require_once ('init.php');
 
 //获取当前价格A
 
-$params = array('symbol' => 'ltc_usd');
+$params = array('symbol' => 'ltc_cny');
 $result = $ico -> tickerApi($params);
 print_r($result);
 
