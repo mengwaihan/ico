@@ -3,7 +3,7 @@ require_once ('init.php');
 
 // $params = array('api_key' => API_KEY, 'symbol' => 'eth_usd', 'type' => 'buy_market', 'price' => 0.01);
 // $result = $ico -> orderHistoryApi(getParam($params));
-$params = array('api_key' => API_KEY, 'symbol' => 'eth_cny', 'order_id' => 69857468);
+$params = array('api_key' => API_KEY, 'order_id' => 69857468, 'symbol' => 'eth_cny');
 $return = $ico -> orderInfoApi(getParam($params));
 var_dump($return);
 exit;
@@ -15,7 +15,7 @@ function getParam($params){
 	foreach ($params as $k => $v) {
 		$sign .= $k . '=' . $v . '&';
 	}
-	$sign .= 'secret_key=SECRETKEY';
+	$sign .= 'secret_key=' . SECRET_KEY;
 	$params['sign'] = strtoupper(MD5($sign));
 	return $params;
 }
