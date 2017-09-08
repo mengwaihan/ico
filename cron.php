@@ -29,9 +29,11 @@ foreach ($icoModel->getIncomplete() as $order) {
 		}
 	}
 }
+var_dump($icoModel->getIncomplete());
 
 //获取上次买入价格B
 $lastBuy = $icoModel->getLastBuy();
+var_dump($lastBuy);
 //比较$A['buy']与B，差价大于10%（待定），则买入
 if (($lastBuy * (1 - 10 / 100)) >= $A->buy){
 	//buy
