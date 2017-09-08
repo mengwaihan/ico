@@ -4,7 +4,8 @@
 class icoModel{
     protected $ico;
     protected $db;
-    function __construct($authentication) {
+    
+    function __construct() {
         $this->ico = $GLOBALS['ico'];
         $this->db = $GLOBALS['db'];
 
