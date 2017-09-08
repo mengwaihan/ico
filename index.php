@@ -5,7 +5,7 @@ require_once ('init.php');
 // $result = $ico -> orderHistoryApi(getParam($params));
 $params = array('api_key' => API_KEY, 'symbol' => 'eth_cny', 'order_id' => 69857468);
 $return = $ico -> orderInfoApi(getParam($params));
-var_dump($result);
+var_dump($return);
 exit;
 
 
