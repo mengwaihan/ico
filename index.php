@@ -15,7 +15,7 @@ function getParam($params){
 	foreach ($params as $k => $v) {
 		$sign .= $k . '=' . $v . '&';
 	}
-	$sign .= 'secret_key' . SECRET_KEY;
+	$sign .= 'secret_key=' . SECRET_KEY;
 	echo $sign . "\n";
 	$params['sign'] = strtoupper(MD5($sign));
 	return $params;
