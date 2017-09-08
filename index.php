@@ -1,5 +1,6 @@
 <?php
 require_once ('init.php');
+asdf
 
 // $params = array('api_key' => API_KEY, 'symbol' => 'eth_usd', 'type' => 'buy_market', 'price' => 0.01);
 // $result = $ico -> orderHistoryApi(getParam($params));
