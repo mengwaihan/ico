@@ -15,10 +15,18 @@ class iocModel{
     public function getLastBuy ()
     {
     	$sql = "SELECT price
-    			FROM ico_record
-    			WHERE type = 'buy_market'
-                AND quanlity < 0
+    			FROM ico_transac
+    			WHERE type = 'eth_cny'
+                AND quanlity > 0
     			ORDER BY record_id DESC";
+        $price = $db->getOne($sql);
+        if (!$price) {
+            $sql = "SELECT price
+                FROM ico_record
+                WHERE type = 'sell_market'
+                ORDER BY record_id DESC";
+            $price = $db->getOne($sql);
+        }
 		return $db->getOne($sql);
     }
 
@@ -28,7 +36,7 @@ class iocModel{
     	$sql = "UPDATE ico_transac SET
     			quanlity = :quanlity
     			WHERE transac_id = :transac_id";
-    	$db->execute($sql, array('quanlity' => $data['quanlity'], 'transac_id' => $data['transac_id']));
+    	$db->execute($sql, array('quanlity' => 0, 'transac_id' => $data['transac_id']));
     	$data['type'] = 'sell_market';
     	$this->insertRecord($data);
     }
@@ -57,5 +65,13 @@ class iocModel{
     			price = :price,
     			transac_id = :transac_id";
     	$db->execute($sql, $data);
+    }
+
+    public function getOrderInfo ($orderId)
+    {
+        $params = array('api_key' => API_KEY, 'symbol' => 'eth_cny', 'order_id' => $orderId);
+        $return = $ico -> orderInfoApi($params);
+
+        return $return->orders[0];
     }
 }
