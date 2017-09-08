@@ -20,5 +20,5 @@ require_once ('sql.php');
 $GLOBALS['db'] = new Db();
 $GLOBALS['ico'] = new OKCoin(new OKCoin_ApiKeyAuthentication(API_KEY, SECRET_KEY));
 require_once ('icoModel.php');
-$GLOBALS['icoModel'] = new iocModel();
+$GLOBALS['icoModel'] = new icoModel();
 
