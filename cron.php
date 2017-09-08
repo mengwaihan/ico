@@ -43,6 +43,6 @@ if (($lastBuy * (1 - 10 / 100)) >= $A->buy){
 		$return = $icoModel->getOrderInfo($result->order_id);
 		$data = array();
 		$data = array('type' => 'eth_cny', 'quanlity' => $return->amount, 'price' => $return->price, 'order_id' => $result->order_id);
-		$icoModel->sell($data);
+		$icoModel->buy($data);
 	}
 }
