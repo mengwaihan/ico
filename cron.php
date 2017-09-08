@@ -1,7 +1,7 @@
 <?php
 
 require_once ('init.php');
-echo time() . "\r\n";
+echo date('Y-m-d H:i:s') . "\r\n";
 
 //获取当前价格A
 
