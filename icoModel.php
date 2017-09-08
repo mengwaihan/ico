@@ -3,8 +3,8 @@
 
 class icoModel{
     function __construct($authentication) {
-        var_dump($ico);
-        var_dump($db);
+        var_dump($GLOBALS['ico']);
+        var_dump($GLOBALS['db']);
 
     }
 
