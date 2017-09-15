@@ -18,7 +18,7 @@ if (file_exists(dirname(__FILE__) . '/private.php')) {
 
 require_once ('sql.php');
 $GLOBALS['db'] = new Db();
-require_once ('icoModel.php');
 $GLOBALS['ico'] = new OKCoin(new OKCoin_ApiKeyAuthentication(API_KEY, SECRET_KEY));
-$GLOBALS['icoModel'] = new iocModel();
+require_once ('icoModel.php');
+$GLOBALS['icoModel'] = new icoModel();
 
